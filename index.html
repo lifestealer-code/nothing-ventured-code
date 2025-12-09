@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooking Tutorial - Classic Margherita Pizza</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app">
+        <div class="container">
+            <!-- Header -->
+            <div class="header">
+                <div class="header-content">
+                    <div class="header-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/>
+                            <line x1="6" y1="17" x2="18" y2="17"/>
+                        </svg>
+                    </div>
+                    <div class="header-text">
+                        <h1>Classic Margherita Pizza</h1>
+                        <div class="recipe-meta">
+                            <span>Prep: 20 min</span>
+                            <span>•</span>
+                            <span>Cook: 15 min</span>
+                            <span>•</span>
+                            <span>Serves: 4</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recipe Image -->
+                <div class="recipe-image">
+                    <img src="resources/pizza.jpg" alt="Margherita Pizza">
+                </div>
+
+                <!-- Tab Navigation -->
+                <div class="tabs">
+                    <button class="tab active" id="ingredientsTab">
+                        <span>Ingredients</span>
+                        <span class="tab-badge" id="ingredientsBadge">0/9</span>
+                    </button>
+                    <button class="tab" id="cookingTab">
+                        <span>Cooking Steps</span>
+                        <span class="tab-badge" id="stepsBadge">0/7</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Ingredients View -->
+            <div class="view active" id="ingredientsView">
+                <div class="card">
+                    <div class="progress-header">
+                        <h2>Gather Your Ingredients</h2>
+                        <span class="progress-text" id="ingredientsProgress">0 of 9</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="ingredientsProgressBar"></div>
+                    </div>
+
+                    <div class="ingredients-list" id="ingredientsList">
+                        <!-- Ingredients will be inserted here by JavaScript -->
+                    </div>
+
+                    <button class="btn-primary btn-start" id="startCookingBtn" disabled>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="5 3 19 12 5 21 5 3"/>
+                        </svg>
+                        <span id="startBtnText">Check off all ingredients to start</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Cooking Steps View -->
+            <div class="view" id="cookingView">
+                <!-- Progress Card -->
+                <div class="card">
+                    <div class="progress-header">
+                        <span id="stepCounter">Step 1 of 7</span>
+                        <span class="progress-text" id="stepsProgress">0% Complete</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="stepsProgressBar"></div>
+                    </div>
+
+                    <!-- Step Indicators -->
+                    <div class="step-indicators" id="stepIndicators">
+                        <!-- Step dots will be inserted here -->
+                    </div>
+                </div>
+
+                <!-- Current Step Card -->
+                <div class="card step-card" id="stepCard">
+                    <!-- Step content will be inserted here -->
+                </div>
+
+                <!-- Completion Message -->
+                <div class="card completion-card hidden" id="completionCard">
+                    <div class="completion-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                    </div>
+                    <h2>Congratulations!</h2>
+                    <p>You've completed all the steps. Your pizza is ready to enjoy!</p>
+                    <button class="btn-primary" id="newRecipeBtn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="19" y1="12" x2="5" y2="12"/>
+                            <polyline points="12 19 5 12 12 5"/>
+                        </svg>
+                        Start a New Recipe
+                    </button>
+                </div>
+
+                <!-- Back to Ingredients -->
+                <button class="btn-text" id="backToIngredientsBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="19" y1="12" x2="5" y2="12"/>
+                        <polyline points="12 19 5 12 12 5"/>
+                    </svg>
+                    Back to Ingredients
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

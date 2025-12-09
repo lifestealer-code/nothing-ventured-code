@@ -1,0 +1,19 @@
+Download these images and save them in the /resources folder:
+
+1. Pizza Image:
+   - Filename: pizza.jpg
+   - URL: https://images.unsplash.com/photo-1574071318508-1cdbab80d002?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJnaGVyaXRhJTIwcGl6emF8ZW58MXx8fHwxNzY1MTk0MjI0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral
+
+2. Ingredients Image:
+   - Filename: ingredients.jpg
+   - URL: https://images.unsplash.com/photo-1617735605078-8a9336be0816?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb29raW5nJTIwaW5ncmVkaWVudHMlMjBraXRjaGVufGVufDF8fHx8MTc2NTI3NjkwMnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral
+
+3. Chef Cooking Image:
+   - Filename: chef.jpg
+   - URL: https://images.unsplash.com/photo-1681270543584-8e541a1bb056?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGVmJTIwY29va2luZ3xlbnwxfHx8fDE3NjUxODM2OTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral
+
+Instructions:
+1. Create a folder named "resources" in the root directory
+2. Download each image from the URLs above
+3. Save them with the specified filenames in the /resources folder
+4. The main pizza.jpg image is already referenced in index.html

@@ -1,0 +1,636 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(to bottom right, #fff7ed, #fef3c7);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #111827;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: #374151;
+}
+
+p {
+    font-size: 1rem;
+    color: #4b5563;
+}
+
+.app {
+    min-height: 100vh;
+    padding: 1.5rem;
+}
+
+.container {
+    max-width: 56rem;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.header-icon {
+    background: #f97316;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-text h1 {
+    margin-bottom: 0.25rem;
+}
+
+.recipe-meta {
+    display: flex;
+    gap: 1rem;
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.recipe-image {
+    width: 100%;
+    height: 240px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.recipe-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    gap: 0.5rem;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.tab {
+    padding: 0.75rem 1.5rem;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: #6b7280;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: -2px;
+}
+
+.tab:hover {
+    color: #111827;
+}
+
+.tab.active {
+    color: #f97316;
+    border-bottom-color: #f97316;
+}
+
+.tab-badge {
+    font-size: 0.875rem;
+    color: inherit;
+}
+
+/* Views */
+.view {
+    display: none;
+}
+
+.view.active {
+    display: block;
+}
+
+/* Card */
+.card {
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Progress */
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.progress-text {
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 0.5rem;
+    background: #e5e7eb;
+    border-radius: 9999px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #f97316;
+    border-radius: 9999px;
+    transition: width 0.3s ease;
+    width: 0%;
+}
+
+/* Ingredients List */
+.ingredients-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.ingredient-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 0.5rem;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 100%;
+    text-align: left;
+}
+
+.ingredient-item:hover {
+    border-color: #d1d5db;
+}
+
+.ingredient-item.checked {
+    border-color: #10b981;
+    background: #f0fdf4;
+}
+
+.ingredient-icon {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.ingredient-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.ingredient-item.checked .ingredient-icon {
+    color: #10b981;
+}
+
+.ingredient-item:not(.checked) .ingredient-icon {
+    color: #9ca3af;
+}
+
+.ingredient-details {
+    flex: 1;
+}
+
+.ingredient-name {
+    color: #111827;
+    font-size: 1rem;
+    margin-bottom: 0.125rem;
+}
+
+.ingredient-item.checked .ingredient-name {
+    text-decoration: line-through;
+    color: #6b7280;
+}
+
+.ingredient-amount {
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+/* Buttons */
+.btn-primary {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background: #f97316;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: #ea580c;
+}
+
+.btn-primary:disabled {
+    background: #d1d5db;
+    color: #6b7280;
+    cursor: not-allowed;
+}
+
+.btn-secondary {
+    padding: 0.75rem 1.5rem;
+    background: white;
+    color: #374151;
+    border: 2px solid #d1d5db;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+}
+
+.btn-secondary:hover:not(:disabled) {
+    border-color: #9ca3af;
+    background: #f9fafb;
+}
+
+.btn-secondary:disabled {
+    border-color: #e5e7eb;
+    color: #9ca3af;
+    cursor: not-allowed;
+}
+
+.btn-text {
+    color: #6b7280;
+    background: none;
+    border: none;
+    font-size: 0.875rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    transition: color 0.2s;
+}
+
+.btn-text:hover {
+    color: #111827;
+}
+
+/* Step Indicators */
+.step-indicators {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.step-indicator {
+    flex: 1;
+    height: 0.5rem;
+    background: #e5e7eb;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.step-indicator:hover {
+    background: #d1d5db;
+}
+
+.step-indicator.completed {
+    background: #10b981;
+}
+
+.step-indicator.current {
+    background: #f97316;
+}
+
+/* Step Card */
+.step-card {
+    padding: 2rem;
+}
+
+.step-header {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.step-number {
+    color: #f97316;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.step-title {
+    margin-bottom: 1rem;
+}
+
+.step-completed-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #10b981;
+    background: #f0fdf4;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.step-description {
+    color: #374151;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+/* Tip Box */
+.tip-box {
+    background: #fffbeb;
+    border-left: 4px solid #fbbf24;
+    padding: 1rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+    margin-bottom: 1.5rem;
+}
+
+.tip-content {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.tip-icon {
+    color: #d97706;
+    flex-shrink: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-top: 0.125rem;
+}
+
+.tip-text h3 {
+    color: #78350f;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.tip-text p {
+    color: #92400e;
+    font-size: 0.875rem;
+}
+
+/* Timer */
+.timer {
+    border: 2px solid #d1d5db;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    background: #f9fafb;
+    transition: all 0.3s;
+}
+
+.timer.running {
+    border-color: #f97316;
+    background: #fff7ed;
+}
+
+.timer.completed {
+    border-color: #10b981;
+    background: #f0fdf4;
+}
+
+.timer-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.timer-header svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.timer.completed .timer-header {
+    color: #10b981;
+}
+
+.timer:not(.completed) .timer-header {
+    color: #f97316;
+}
+
+.timer-display {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.timer-time {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #374151;
+    margin-bottom: 0.5rem;
+}
+
+.timer.running .timer-time {
+    color: #f97316;
+}
+
+.timer.completed .timer-time {
+    color: #10b981;
+}
+
+.timer-duration {
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+.timer-progress {
+    width: 100%;
+    height: 0.5rem;
+    background: #e5e7eb;
+    border-radius: 9999px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.timer-progress-fill {
+    height: 100%;
+    border-radius: 9999px;
+    transition: width 1s linear;
+    width: 0%;
+}
+
+.timer:not(.completed) .timer-progress-fill {
+    background: #f97316;
+}
+
+.timer.completed .timer-progress-fill {
+    background: #10b981;
+}
+
+.timer-controls {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.timer-controls .btn-primary {
+    flex: 1;
+}
+
+.timer-complete-text {
+    margin-top: 1rem;
+    text-align: center;
+    color: #10b981;
+    font-weight: 500;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Navigation */
+.step-navigation {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.step-navigation .btn-secondary,
+.step-navigation .btn-primary {
+    flex: 1;
+}
+
+/* Completion Card */
+.completion-card {
+    border: 2px solid #10b981;
+    background: #f0fdf4;
+    text-align: center;
+    padding: 2rem;
+}
+
+.completion-icon {
+    background: #10b981;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: white;
+}
+
+.completion-card h2 {
+    color: #064e3b;
+    margin-bottom: 0.5rem;
+}
+
+.completion-card p {
+    color: #065f46;
+    margin-bottom: 1.5rem;
+}
+
+.completion-card .btn-primary {
+    width: auto;
+    display: inline-flex;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .app {
+        padding: 1rem;
+    }
+
+    .header {
+        padding: 1rem;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+
+    .step-card {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    .recipe-meta {
+        font-size: 0.75rem;
+        gap: 0.5rem;
+    }
+
+    .recipe-image {
+        height: 180px;
+    }
+
+    .tab {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+
+    .timer-time {
+        font-size: 2.5rem;
+    }
+
+    .step-navigation {
+        flex-direction: column;
+    }
+}
